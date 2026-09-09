@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portale Sostenibilità ESG | Gruppo BF S.p.A.</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <!-- ==========================================
+             SEZIONE 1: DOPPIO LOGIN (Split Screen)
+             ========================================== -->
+        <section id="login-section" class="active-view" data-view aria-hidden="false">
+            <div class="section-header">
+                <span class="eyebrow">Sostenibilità • Filiera • Innovazione</span>
+                <h1>Portale ESG del Gruppo BF</h1>
+                <p>Scopri come un modello agricolo moderno combina qualità, responsabilità ambientale e valore per il territorio.</p>
+            </div>
+            
+            <div class="main-logo-container">
+                <img src="logo.jpg" alt="Logo Gruppo BF" class="logo-main" style="max-height: 100px;">
+            </div>
+
+            <div class="dual-login-container">
+                
+                <!-- MODIFICA TESTI B2C LOGIN -->
+                <div class="login-box user-login">
+                    <div class="login-tag">Per consumatori</div>
+                    <h2>Area Consumatori</h2>
+                    <p>Scopri l'origine dei nostri prodotti, l'innovazione nei campi e l'impegno per un'agricoltura 100% italiana a basso impatto ambientale.</p>
+                    <div class="consumer-points" aria-label="Il nostro impegno">
+                        <div class="consumer-point">
+                            <strong>100% Italia</strong>
+                            <span>Garantiamo l'origine lavorando la terra con dedizione e rispetto.</span>
+                        </div>
+                        <div class="consumer-point">
+                            <strong>Impatto Zero</strong>
+                            <span>Usiamo sensori IoT per dare alla terra solo ciò che serve, azzerando gli sprechi.</span>
+                        </div>
+                        <div class="consumer-point">
+                            <strong>Trasparenza</strong>
+                            <span>Tracciamo ogni fase del prodotto, dal genoma fino alla tua tavola.</span>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn-primary btn-user menu-action" data-target="about-section">
+                        🌾 Il nostro modo di fare agricoltura
+                    </button>
+
+                    <button type="button" class="btn-primary btn-user btn-user-secondary" data-target="client-section">
+                        🌱 Scopri la nostra filiera tracciata
+                    </button>
+                </div>
+
+                <div class="login-box business-login">
+                    <div class="login-tag business-tag">Per partner B2B</div>
+                    <h2>Accesso Partner B2B</h2>
+                    <p>Consulta il bilancio di sostenibilità, i dati ESG e i principali indicatori di performance della filiera.</p>
+                    <div class="feature-list business-features" aria-label="Vantaggi per partner">
+                        <span>Dati ESG</span>
+                        <span>Tracciabilità</span>
+                        <span>Performance</span>
+                    </div>
+                    
+                    <form id="business-login-form">
+                        <div class="input-group">
+                            <label for="username">ID Aziendale</label>
+                            <input type="text" id="username" placeholder="Es. admin" autocomplete="username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-business">Accedi all'area tecnica</button>
+                        <p id="demo-message" class="demo-message" aria-live="polite" hidden>Modalità demo: l'accesso non verifica credenziali reali.</p>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="trust-strip" aria-label="Indicatori principali del Gruppo BF">
+                <button type="button" class="trust-item" aria-expanded="false">
+                    <strong>7.750</strong>
+                    <span>ettari agricoli</span>
+                    <small class="trust-detail">La superficie agricola gestita dal Gruppo BF.</small>
+                </button>
+                <button type="button" class="trust-item" aria-expanded="false">
+                    <strong>100%</strong>
+                    <span>tracciabilità filiera</span>
+                    <small class="trust-detail">Seguiamo il percorso dei prodotti lungo la filiera.</small>
+                </button>
+                <button type="button" class="trust-item" aria-expanded="false">
+                    <strong>GRI</strong>
+                    <span>rendicontazione ESG</span>
+                    <small class="trust-detail">Un riferimento internazionale per raccontare i nostri impatti.</small>
+                </button>
+                <button type="button" class="trust-item" aria-expanded="false">
+                    <strong>Precisione</strong>
+                    <span>agricoltura moderna</span>
+                    <small class="trust-detail">Tecnologie e dati per usare meglio risorse e terreni.</small>
+                </button>
+            </div>
+
+            <div class="cta-banner" aria-label="Chiamata all'azione del portale">
+                <div>
+                    <span class="eyebrow light">Approfondimento</span>
+                    <h2>Trasparenza, qualità e responsabilità nel sistema agroalimentare.</h2>
+                </div>
+                <a href="https://www.bfspa.it/" target="_blank" rel="noopener noreferrer" class="btn-cta">Scopri di più</a>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SEZIONE 2A: AREA CHI SIAMO E SOSTENIBILITA'
+             ========================================== -->
+        <section id="about-section" class="hidden-view" data-view aria-hidden="true">
+            <div class="client-wrapper">
+                
+                <header class="client-header">
+                    <div class="client-title">
+                        <span class="page-kicker">Chi siamo</span>
+                        <!-- TESTI AGGIORNATI -->
+                        <h2>Il patto con la terra e con la tua tavola.</h2>
+                        <p>La storia agricola italiana incontra l'agricoltura di precisione per offrirti prodotti sani ed etici.</p>
+                    </div>
+                    <button class="btn-logout" type="button" data-back-to-menu>Torna al menu principale</button>
+                </header>
+
+                <div class="about-intro">
+                    <div class="about-intro-copy">
+                        <span class="section-label">La nostra identità</span>
+                        <h3>Uniamo la tradizione con la più alta tecnologia.</h3>
+                        <p>Il <strong>Gruppo BF S.p.A.</strong> nasce intorno a <strong>Bonifiche Ferraresi</strong>, gestendo ad oggi oltre 7.750 ettari di terreno che rappresentano un patrimonio nazionale.</p>
+                        <p>Non ci limitiamo a coltivare: impieghiamo sistemi avanzati per abbattere i consumi idrici e chimici, trasformando un modello tradizionale in un ecosistema sostenibile.</p>
+                    </div>
+                    <div class="about-intro-media">
+                        <img src="foto-azienda.jpg" alt="Stabilimento e mezzi agricoli del Gruppo BF" class="about-image">
+                        <span>Terra, competenza e innovazione.</span>
+                    </div>
+                </div>
+
+                <section class="about-story" aria-label="La storia e il modello del Gruppo BF">
+                    <div class="about-section-heading about-story-heading">
+                        <span class="section-label">BF in breve</span>
+                        <h3>Una filiera agricola raccontata con i fatti.</h3>
+                        <p>Il Gruppo BF mette in relazione terra, persone e competenze per costruire un modello agricolo più consapevole e certificato.</p>
+                    </div>
+                    <div class="about-journey">
+                        <button type="button" class="journey-step is-active" aria-expanded="true" aria-controls="journey-detail-roots" data-journey-step="roots">
+                            <span class="journey-number">01</span>
+                            <h4>Le radici</h4>
+                            <p>Tuteliamo il territorio italiano difendendo la biodiversità e le comunità locali.</p>
+                        </button>
+                        <button type="button" class="journey-step" aria-expanded="false" aria-controls="journey-detail-method" data-journey-step="method">
+                            <span class="journey-number">02</span>
+                            <h4>Il metodo</h4>
+                            <p>Satelliti e sensori per fornire alle piante solo l'acqua e il nutrimento strettamente necessari.</p>
+                        </button>
+                        <button type="button" class="journey-step" aria-expanded="false" aria-controls="journey-detail-responsibility" data-journey-step="responsibility">
+                            <span class="journey-number">03</span>
+                            <h4>La trasparenza</h4>
+                            <p>Rendicontiamo ogni impatto. Il nostro bilancio ESG è la tua garanzia di un acquisto etico.</p>
+                        </button>
+                    </div>
+                    
+                    <div class="journey-detail" id="journey-detail-roots" data-journey-panel="roots">
+                        <span class="impact-label">01 · Le radici</span>
+                        <strong>Un patrimonio agricolo 100% italiano.</strong>
+                        <p>Mantenere l'intera filiera sul territorio nazionale significa sostenere l'occupazione locale e assicurare standard qualitativi d'eccellenza che partono dal campo.</p>
+                    </div>
+                    <div class="journey-detail" id="journey-detail-method" data-journey-panel="method" hidden>
+                        <span class="impact-label">02 · Il metodo</span>
+                        <strong>Agricoltura di Precisione.</strong>
+                        <p>Raccogliamo dati millimetrici in tempo reale. Questo abbatte drasticamente il nostro impatto ambientale, ottimizzando le rese senza impoverire i terreni.</p>
+                    </div>
+                    <div class="journey-detail" id="journey-detail-responsibility" data-journey-panel="responsibility" hidden>
+                        <span class="impact-label">03 · La trasparenza</span>
+                        <strong>Misurare per migliorare.</strong>
+                        <p>Non facciamo promesse, mostriamo dati. I nostri report e certificazioni sono accessibili a tutti, per farti scegliere in modo realmente consapevole.</p>
+                    </div>
+                </section>
+
+                <div class="about-fact-row">
+                    <div class="about-fact">
+                        <strong>7.750</strong>
+                        <span>ettari di terra italiana</span>
+                    </div>
+                    <p>Una responsabilità concreta: custodire il patrimonio agricolo nazionale e proteggerlo per le generazioni future.</p>
+                </div>
+
+                <section class="about-values" aria-label="I nostri impegni">
+                    <div class="about-section-heading">
+                        <span class="section-label">Il nostro impegno per te</span>
+                        <h3>La sostenibilità che puoi ritrovare nel piatto.</h3>
+                        <p>Tre responsabilità che guidano il modo in cui lavoriamo ogni giorno nei nostri campi.</p>
+                    </div>
+
+                    <div class="about-explorer">
+                        <div class="about-tabs" role="tablist" aria-label="Aree di impegno">
+                            <button type="button" class="about-tab is-active" role="tab" aria-selected="true" aria-controls="about-panel-environment" data-about-tab="environment">01 <span>Ambiente</span></button>
+                            <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="about-panel-people" data-about-tab="people">02 <span>Salute</span></button>
+                            <button type="button" class="about-tab" role="tab" aria-selected="false" aria-controls="about-panel-responsibility" data-about-tab="responsibility">03 <span>Etica</span></button>
+                        </div>
+
+                        <div class="about-detail-panel">
+                            <article class="about-panel is-active" id="about-panel-environment" role="tabpanel" data-about-panel="environment">
+                                <span class="impact-label">Ambiente</span>
+                                <h4>Rispetto per ogni goccia d'acqua.</h4>
+                                <p>Implementiamo tecnologie per ridurre al minimo l'impronta idrica delle nostre coltivazioni e incrementare l'autoproduzione energetica da fonti rinnovabili.</p>
+                                <div class="about-panel-note">Agricoltura di precisione · Risparmio Idrico · Rinnovabili</div>
+                            </article>
+                            <article class="about-panel" id="about-panel-people" role="tabpanel" data-about-panel="people" hidden>
+                                <span class="impact-label">Salute</span>
+                                <h4>Un prodotto pulito e sicuro.</h4>
+                                <p>Azzeriamo quasi del tutto la necessità di trattamenti fitosanitari e chimici, restituendoti un alimento sano che rispetta te e il terreno in cui è cresciuto.</p>
+                                <div class="about-panel-note">Zero residui nocivi · Sicurezza alimentare · Qualità</div>
+                            </article>
+                            <article class="about-panel" id="about-panel-responsibility" role="tabpanel" data-about-panel="responsibility" hidden>
+                                <span class="impact-label">Etica</span>
+                                <h4>Lavoro giusto, dal primo all'ultimo passo.</h4>
+                                <p>Assicuriamo condizioni di lavoro sicure e dignitose lungo tutta la catena, estendendo il nostro rigoroso Codice di Condotta a ogni singolo fornitore della filiera.</p>
+                                <div class="about-panel-note">Tutela dei lavoratori · Formazione · Codice di Condotta</div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-sources" aria-label="Documenti del Gruppo BF">
+                    <div>
+                        <span class="section-label">Per approfondire</span>
+                        <h3>Le fonti del nostro percorso.</h3>
+                    </div>
+                    <div class="source-links">
+                        <a href="pdf/dnf-2023.pdf" target="_blank" rel="noopener noreferrer">Dichiarazione non finanziaria 2023 <span>Apri</span></a>
+                        <a href="pdf/prospettoinformativo.pdf" target="_blank" rel="noopener noreferrer">Prospetto informativo <span>Apri</span></a>
+                        <a href="pdf/codice-etico.pdf" target="_blank" rel="noopener noreferrer">Codice etico <span>Apri</span></a>
+                        <a href="pdf/codice-condotta-fornitori.pdf" target="_blank" rel="noopener noreferrer">Codice di condotta fornitori <span>Apri</span></a>
+                    </div>
+                </section>
+
+                <footer class="portal-footer about-footer">
+                    <div class="footer-info">
+                        <span class="section-label">Continua a conoscere BF</span>
+                        <p><strong>Gruppo BF S.p.A.</strong> Una filiera agricola italiana che guarda avanti.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.bfspa.it/" target="_blank" rel="noopener noreferrer" class="social-btn">Sito Ufficiale</a>
+                        <a href="https://www.linkedin.com/company/bf-s-p-a/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SEZIONE 2B: AREA PRODOTTO E FILIERA
+             ========================================== -->
+        <section id="client-section" class="hidden-view" data-view aria-hidden="true">
+            <div class="client-wrapper">
+                
+                <header class="client-header">
+                    <div class="client-title">
+                        <span class="page-kicker">La filiera</span>
+                        <!-- TESTI AGGIORNATI CON RIFERIMENTO AL QR CODE -->
+                        <h2>Dal seme allo scaffale, sotto i tuoi occhi.</h2>
+                        <p>Un tracciamento trasparente e interattivo per raccontarti ogni passo del nostro cibo.</p>
+                    </div>
+                    <button class="btn-logout" type="button" data-back-to-menu>Torna al menu principale</button>
+                </header>
+
+                <div class="trace-intro">
+                    <div class="trace-intro-copy">
+                        <span class="section-label">Un controllo continuo</span>
+                        <h3>La vera qualità è quella che puoi verificare.</h3>
+                        <p>Scansionando il <strong>QR Code sui nostri packaging</strong>, puoi accedere direttamente alla storia di ciò che stai per mangiare.</p>
+                        <p>Ogni singola fase, dalla semina fino all'arrivo nel punto vendita, viene registrata digitalmente per assicurarti che il prodotto sia sicuro, etico e totalmente italiano.</p>
+                    </div>
+                    <div class="trace-intro-media">
+                        <img src="foto-serra.webp" alt="Coltivazioni del Gruppo BF in serra" class="trace-image">
+                        <span>Tracciabilità, QR Code, Qualità.</span>
+                    </div>
+                </div>
+
+                <section class="trace-process" aria-label="Le fasi della filiera">
+                    <div class="trace-section-heading">
+                        <span class="section-label">Il percorso</span>
+                        <h3>Quattro passaggi rigorosamente verificati.</h3>
+                        <p>Seleziona una fase per scoprire i nostri standard qualitativi.</p>
+                    </div>
+
+                    <div class="trace-explorer">
+                        <div class="trace-tabs" role="tablist" aria-label="Fasi della filiera">
+                            <button type="button" class="trace-tab is-active" role="tab" aria-selected="true" aria-controls="trace-panel-grow" data-trace-tab="grow"><span>01</span> Il Seme</button>
+                            <button type="button" class="trace-tab" role="tab" aria-selected="false" aria-controls="trace-panel-monitor" data-trace-tab="monitor"><span>02</span> Il Campo</button>
+                            <button type="button" class="trace-tab" role="tab" aria-selected="false" aria-controls="trace-panel-transform" data-trace-tab="transform"><span>03</span> Il Raccolto</button>
+                            <button type="button" class="trace-tab" role="tab" aria-selected="false" aria-controls="trace-panel-deliver" data-trace-tab="deliver"><span>04</span> La Tavola</button>
+                        </div>
+
+                        <div class="trace-detail-panel">
+                            <article class="trace-panel is-active" id="trace-panel-grow" role="tabpanel" data-trace-panel="grow">
+                                <span class="impact-label">01 · Il Seme</span>
+                                <h4>Partiamo dal corredo genetico.</h4>
+                                <p>Scegliamo e certifichiamo sementi di altissima qualità che richiedano meno acqua e si adattino in modo naturale alle caratteristiche del suolo italiano.</p>
+                                <div class="trace-panel-note">Sementi Certificate · Adattabilità · Biodiversità</div>
+                            </article>
+                            <article class="trace-panel" id="trace-panel-monitor" role="tabpanel" data-trace-panel="monitor" hidden>
+                                <span class="impact-label">02 · Il Campo</span>
+                                <h4>La natura supportata dai dati.</h4>
+                                <p>Attraverso l'agricoltura di precisione, monitoriamo costantemente la salute delle piante, assicurando un bassissimo impatto ambientale e zero sprechi.</p>
+                                <div class="trace-panel-note">Sensori · Agricoltura IoT · Sostenibilità</div>
+                            </article>
+                            <article class="trace-panel" id="trace-panel-transform" role="tabpanel" data-trace-panel="transform" hidden>
+                                <span class="impact-label">03 · Il Raccolto</span>
+                                <h4>Lavorazione a filiera integrata.</h4>
+                                <p>Manteniamo il controllo diretto anche nei processi di prima e seconda lavorazione, valorizzando le proprietà nutritive del raccolto con lavorazioni delicate.</p>
+                                <div class="trace-panel-note">Controllo Diretto · Valore Nutrizionale · Sicurezza</div>
+                            </article>
+                            <article class="trace-panel" id="trace-panel-deliver" role="tabpanel" data-trace-panel="deliver" hidden>
+                                <span class="impact-label">04 · La Tavola</span>
+                                <h4>Basta una scansione.</h4>
+                                <p>Ti garantiamo la tracciabilità assoluta: dalla mappa del campo in cui è stato coltivato fino agli scaffali del supermercato. Tutto a portata di smartphone.</p>
+                                <div class="trace-panel-note">Logistica · QR Code Packaging · Fiducia Consumatore</div>
+                            </article>
+                        </div>
+                </section>
+
+                <section class="trace-products" aria-label="Le produzioni del Gruppo BF">
+                    <div class="trace-section-heading">
+                        <span class="section-label">Le produzioni</span>
+                        <h3>L'eccellenza della terra italiana.</h3>
+                        <p>Dalle sementi alle nostre eccellenze alimentari, uniche per provenienza e trasparenza.</p>
+                    </div>
+                    <div class="product-showcase">
+                        <div class="product-list" role="tablist" aria-label="Produzioni agricole">
+                            <button type="button" class="product-item is-active" role="tab" aria-selected="true" aria-controls="product-panel-seeds" data-product-tab="seeds" data-product-image="sementi certificate.jpg">Sementi certificate</button>
+                            <button type="button" class="product-item" role="tab" aria-selected="false" aria-controls="product-panel-rice" data-product-tab="rice" data-product-image="riso.png">Riso 100% italiano</button>
+                            <button type="button" class="product-item" role="tab" aria-selected="false" aria-controls="product-panel-legumes" data-product-tab="legumes" data-product-image="legumi.jpg">Legumi estensivi</button>
+                            <button type="button" class="product-item" role="tab" aria-selected="false" aria-controls="product-panel-herbs" data-product-tab="herbs" data-product-image="piante-officinali.jpg">Piante officinali</button>
+                            
+                            <div class="product-detail" id="product-panel-seeds" role="tabpanel" data-product-panel="seeds">
+                                <span class="impact-label">Sementi certificate</span>
+                                <p>La nostra garanzia di origine: selezioniamo geneticamente il punto di partenza ideale per assicurarti raccolti sani, resistenti e di qualità superiore.</p>
+                            </div>
+                            <div class="product-detail" id="product-panel-rice" role="tabpanel" data-product-panel="rice" hidden>
+                                <span class="impact-label">Riso 100% italiano</span>
+                                <p>Coltivato nelle nostre tenute con tecniche di ottimizzazione idrica all'avanguardia per offrirti un chicco perfetto senza impoverire le falde acquifere.</p>
+                            </div>
+                            <div class="product-detail" id="product-panel-legumes" role="tabpanel" data-product-panel="legumes" hidden>
+                                <span class="impact-label">Legumi estensivi</span>
+                                <p>Eccellenti dal punto di vista nutrizionale e fondamentali per l'ecosistema: arricchiscono il terreno in modo naturale rispettando i cicli di rotazione.</p>
+                            </div>
+                            <div class="product-detail" id="product-panel-herbs" role="tabpanel" data-product-panel="herbs" hidden>
+                                <span class="impact-label">Piante officinali</span>
+                                <p>Coltiviamo il benessere sfruttando la preziosa biodiversità dei nostri territori, offrendo erbe aromatiche e officinali tracciate con la massima trasparenza.</p>
+                            </div>
+                        </div>
+
+                        <div class="product-visual" aria-live="polite">
+                            <img id="product-visual-image" src="basilico-bg.jpg" alt="Sementi certificate del Gruppo BF" class="products-image">
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="portal-footer" style="margin-top: 30px;">
+                    <div class="footer-info">
+                        <p><strong>GRUPPO B.F. S.p.A.</strong> - Via Cavicchini, 2 - 44034 Jolanda di Savoia (FE)</p>
+                    </div>
+                    <div class="social-links" style="margin-top: 10px;">
+                        <a href="https://www.bfspa.it/" target="_blank" rel="noopener noreferrer" class="social-btn">Sito Ufficiale</a>
+                        <a href="https://www.linkedin.com/company/bf-s-p-a/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SEZIONE 3: AREA BUSINESS (B2B)
+             ========================================== -->
+        <section id="business-section" class="hidden-view" data-view aria-hidden="true">
+            <div class="dashboard-wrapper">
+                
+                <header class="dash-header">
+                    <div class="dash-title">
+                        <h2>📊 Dashboard Bilancio di Sostenibilità ESG</h2>
+                        <p>Area riservata Partner B2B - Monitoraggio Risorse e Indicatori</p>
+                    </div>
+                    <button class="btn-logout" type="button" data-back-to-menu>Torna al menu principale</button>
+                </header>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>SUPERFICIE AGRICOLA (SAU)</h3>
+                        <p class="kpi-value">7.750 ha</p>
+                        <span class="kpi-desc">Maggiore azienda agricola italiana</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>TRACCIABILITÀ DI FILIERA</h3>
+                        <p class="kpi-value">100%</p>
+                        <span class="kpi-desc">Dal seme allo scaffale</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>STANDARD RENDICONTAZIONE</h3>
+                        <p class="kpi-value">GRI</p>
+                        <span class="kpi-desc">Bilancio ESG Verificato</span>
+                    </div>
+                </div>
+
+                <div class="story-about-card" style="border-left-color: #2c5e3b; margin-bottom: 25px;">
+                    <h3>🌱 Modello di Valutazione ESG di Gruppo</h3>
+                    <p>I grafici sottostanti sintetizzano le performance agro-industriali in ottica di sostenibilità integrata, conformemente alla DNF ufficiale di BF S.p.A.</p>
+                </div>
+
+                <div class="dashboard-grid-layout">
+                    <div class="dashboard-column">
+                        <div class="chart-box">
+                            <h3>Efficienza Idrica nei Campi (Indice risparmio %)</h3>
+                            <canvas id="waterChart"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h3>Fonti Energetiche Rinnovabili (%)</h3>
+                            <canvas id="energyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-column">
+                        <div class="chart-box">
+                            <h3>Ripartizione Pilastri Sostenibilità ESG (%)</h3>
+                            <canvas id="esgChart"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h3>Trend Riduzione Emissioni CO2 (Tonnellate)</h3>
+                            <canvas id="co2Chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-about-card" style="border-left-color: #f59e0b; margin-top: 25px; margin-bottom: 25px;">
+                    <h3>🤝 Dati della Catena di Fornitura (Partner B2B)</h3>
+                    <p>Risultati 2023 basati sui fornitori rilevanti della filiera agricola e alimentare:</p>
+                    
+                    <ul style="line-height: 1.8; margin-bottom: 20px; font-size: 0.9rem;">
+                        <li><strong>Adozione Codice di Condotta:</strong> Il Codice è stato adottato dal 74% dei fornitori (37 su 50).</li>
+                        <li><strong>Certificazioni della filiera:</strong> Il 24% possiede certificazioni etico-ambientali (12 fornitori).</li>
+                        <li><strong>Obiettivo strategico:</strong> Progressione annua media del 20% circa fino al 2027.</li>
+                    </ul>
+
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                        <div class="chart-box" style="flex: 1; min-width: 250px;">
+                            <h4 style="text-align: center; color: #444; font-size: 0.95rem;">Adozione Codice (2023)</h4>
+                            <canvas id="chartAdozione"></canvas>
+                        </div>
+                        <div class="chart-box" style="flex: 1; min-width: 250px;">
+                            <h4 style="text-align: center; color: #444; font-size: 0.95rem;">Fornitori Certificati (2023)</h4>
+                            <canvas id="chartCertificazioni"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-container" style="margin-bottom: 25px;">
+                    <div class="story-card" style="border-top: 4px solid #2c5e3b; text-align: center; width: 100%;">
+                        <h3>📥 Documenti Ufficiali e Policy (PDF)</h3>
+                        <p style="margin-bottom: 20px;">Scarica i documenti fondamentali per la conformità aziendale.</p>
+                        
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a href="pdf/codice-etico.pdf" download="codice-etico.pdf" class="btn-download">📄 Codice Etico</a>
+                            <a href="pdf/codice-condotta-fornitori.pdf" download="codice-condotta-fornitori.pdf" class="btn-download">📄 Codice Condotta Fornitori</a>
+                            <a href="pdf/dnf-2023.pdf" download="dnf-2023.pdf" class="btn-download">📄 Bilancio ESG (DNF 2023)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="portal-footer" style="background: rgba(255,255,255,0.95); margin-top: 30px;">
+                    <div class="footer-info">
+                        <p><strong>GRUPPO B.F. S.p.A.</strong></p>
+                        <p>Area Tecnica & Compliance - Supporto Partner B2B</p>
+                    </div>
+                    <div class="social-links" style="margin-top: 10px;">
+                        <a href="https://www.bfspa.it/" target="_blank" rel="noopener noreferrer" class="social-btn">Sito Ufficiale</a>
+                        <a href="https://www.linkedin.com/company/bf-s-p-a/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="social-btn">LinkedIn</a>
+                    </div>
+                </footer>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
